@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Mechanics - Your Online Auto Repair Solution</title>
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            font-size: 28px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #6a11cb;
+        }
+
+        h2 {
+            margin: 20px 0;
+            font-size: 32px;
+            color: white;
+        }
+
+        .services {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .service-box {
+            width: 250px;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .service-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-box h3 {
+            font-size: 24px;
+            margin: 10px 0;
+            color: #6a11cb;
+        }
+
+        .service-box p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .service-box .icon {
+            font-size: 40px;
+            color: #6a11cb;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #6a11cb;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Complaint Box Styles */
+        .complaint-box {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            margin: 20px auto;
+            text-align: left;
+        }
+
+        .complaint-box h3 {
+            font-size: 24px;
+            color: #6a11cb;
+            margin-bottom: 15px;
+        }
+
+        .complaint-box label {
+            font-size: 14px;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .complaint-box input,
+        .complaint-box textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .complaint-box button {
+            background: #6a11cb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        .complaint-box button:hover {
+            background: #2575fc;
+        }
+
+        /* Testimonials Section */
+        #testimonials {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonial {
+            margin: 15px 0;
+            padding: 10px;
+            border-left: 4px solid #6a11cb;
+            background: #f4f4f4;
+            border-radius: 8px;
+        }
+
+        .testimonial p {
+            margin: 0;
+            font-style: italic;
+            color: #666;
+        }
+
+        .testimonial p:last-child {
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Loading Spinner */
+        #loading-spinner {
+            display: none;
+            font-size: 24px;
+            color: #6a11cb;
+            margin-top: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .service-box {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .complaint-box {
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>E-Mechanics - Your Online Auto Repair Solution</header>
+    <nav>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#complaint-box">Complaint Box</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="service-box" onclick="redirectToForm('https://docs.google.com/forms/d/e/1FAIpQLSc2yRJEuoQrUG2dhDU_jDpSxgoy0iN6oeKsbOgAklcmddU2_w/viewform?usp=header')">
+            <div class="icon"><i class="fas fa-car"></i></div>
+            <h3>Car Repair</h3>
+            <p>Get expert car repair services at your location.</p>
+        </div>
+        <div class="service-box" onclick="redirectToForm('https://docs.google.com/forms/d/e/1FAIpQLSc2yRJEuoQrUG2dhDU_jDpSxgoy0iN6oeKsbOgAklcmddU2_w/viewform?usp=header')">
+            <div class="icon"><i class="fas fa-bicycle"></i></div>
+            <h3>Bike Repair</h3>
+            <p>Quick and reliable bike repair services.</p>
+        </div>
+        <div class="service-box" onclick="redirectToForm('https://docs.google.com/forms/d/e/1FAIpQLSc2yRJEuoQrUG2dhDU_jDpSxgoy0iN6oeKsbOgAklcmddU2_w/viewform?usp=header')">
+            <div class="icon"><i class="fas fa-battery-full"></i></div>
+            <h3>Battery Replacement</h3>
+            <p>Fast battery replacement and jump-start assistance.</p>
+        </div>
+        <div class="service-box" onclick="redirectToForm('https://docs.google.com/forms/d/e/1FAIpQLSc2yRJEuoQrUG2dhDU_jDpSxgoy0iN6oeKsbOgAklcmddU2_w/viewform?usp=header')">
+            <div class="icon"><i class="fas fa-oil-can"></i></div>
+            <h3>Oil Change</h3>
+            <p>Schedule an oil change for smooth engine performance.</p>
+        </div>
+    </div>
+
+    <!-- Complaint Box -->
+    <div class="complaint-box" id="complaint-box">
+        <h3><i class="fas fa-comment-dots"></i> Complaint Box</h3>
+        <form id="complaint-form">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="entry.1234567890" placeholder="Enter your name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="entry.0987654321" placeholder="Enter your email" required>
+
+            <label for="message">Your Complaint or Feedback</label>
+            <textarea id="message" name="entry.1122334455" rows="5" placeholder="Describe your issue or feedback" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+        <div id="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i> Submitting...
+        </div>
+        <p id="confirmation-message" style="display: none; color: green; font-weight: bold;">
+            Thank you for your feedback! We'll get back to you soon.
+        </p>
+    </div>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are E-Mechanics, your trusted partner for auto repair services. With years of experience, we provide reliable and affordable solutions for all your vehicle needs.</p>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial">
+            <p>"Great service! My car was fixed in no time."</p>
+            <p>- Asnan khan</p>
+        </div>
+        <div class="testimonial">
+            <p>"Highly recommend E-Mechanics for all your auto needs."</p>
+            <p>- Mobeen Khan</p>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:support@emechanics.com">support@emechanics.com</a></p>
+        <p>Phone: <a href="tel:123-456-7890">123-456-7890</a></p>
+        <p>Address: 123 Auto Repair Street, City, Country</p>
+    </section>
+
+    <footer>
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>Contact us: <a href="mailto:support@emechanics.com">support@emechanics.com</a> | Call: <a href="tel:+923478033080">+923478033080</a></p>
+        <p><a href="#privacy-policy">Privacy Policy</a> | <a href="#terms-of-service">Terms of Service</a></p>
+    </footer>
+
+    <script>
+        // Function to redirect to Google Form
+        function redirectToForm(formUrl) {
+            window.location.href = formUrl;
+        }
+
+        // Handle complaint form submission
+        document.getElementById('complaint-form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent default form submission
+
+            // Show loading spinner
+            document.getElementById('loading-spinner').style.display = 'block';
+
+            // Get the form data
+            const formData = new FormData(document.getElementById('complaint-form'));
+
+            // Submit the form data to Google Forms
+            fetch(
+                'https://docs.google.com/forms/d/e/1FAIpQLSc2yRJEuoQrUG2dhDU_jDpSxgoy0iN6oeKsbOgAklcmddU2_w/viewform?usp=header', // Replace with your Google Form POST URL
+                {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: new URLSearchParams(formData).toString(),
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                }
+            )
+            .then(() => {
+                // Hide loading spinner
+                document.getElementById('loading-spinner').style.display = 'none';
+
+                // Display confirmation message
+                document.getElementById('confirmation-message').style.display = 'block';
+
+                // Clear the form
+                document.getElementById('complaint-form').reset();
+            })
+            .catch((error) => {
+                console.error('Error submitting form:', error);
+                document.getElementById('loading-spinner').style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
