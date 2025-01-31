@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="E-Mechanics offers reliable online auto repair solutions for cars, bikes, battery replacements, and more. Get your vehicle fixed from the comfort of your home.">
+    <meta name="keywords" content="auto repair, car repair, bike repair, battery replacement, oil change, e-mechanics, vehicle repair services">
+    <meta property="og:title" content="E-Mechanics - Your Online Auto Repair Solution">
+    <meta property="og:description" content="Reliable online auto repair services for all your vehicle needs. Get expert mechanics at your doorsteps for hassle-free solutions.">
+    <meta property="og:image" content="path_to_image.jpg"> <!-- Replace with actual image path -->
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="E-Mechanics - Your Online Auto Repair Solution">
+    <meta name="twitter:description" content="Get professional auto repair services right at your doorstep with E-Mechanics.">
+    <meta name="twitter:image" content="path_to_image.jpg"> <!-- Replace with actual image path -->
+    <title>E-Mechanics - Your Online Auto Repair Solution</title>
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('pic.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            font-size: 28px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #6a11cb;
+        }
+
+        h2 {
+            margin: 20px 0;
+            font-size: 32px;
+            color: white;
+        }
+
+        .services {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .service-box {
+            width: 250px;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .service-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-box h3 {
+            font-size: 24px;
+            margin: 10px 0;
+            color: white;
+        }
+
+        .service-box p {
+            font-size: 14px;
+            color: white;
+        }
+
+        .service-box .icon {
+            font-size: 40px;
+            color: #6a11cb;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #6a11cb;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Testimonials Section */
+        #testimonials {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+
+        .testimonial {
+            margin: 15px 0;
+            padding: 10px;
+            border-left: 4px solid #6a11cb;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border-radius: 8px;
+        }
+
+        .testimonial p {
+            margin: 0;
+            font-style: italic;
+            color: white;
+        }
+
+        .testimonial p:last-child {
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Contact Us Section */
+        #contact {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+
+        #contact a {
+            color: #6a11cb;
+            text-decoration: none;
+        }
+
+        #contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* About Us Section */
+        #about {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+
+        /* Privacy Policy Section */
+        #privacy-policy {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            display: none;
+            text-align: left;
+        }
+
+        #privacy-policy.show {
+            display: block;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .service-box {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .complaint-box {
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>E-Mechanics - Your Online Auto Repair Solution</header>
+    <nav>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#complaint-box">Complaint Box</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="service-box" onclick="redirectToForm('https://docs.google.com/forms/d/e/1FAIpQLSc2yRJEuoQrUG2dhDU_jDpSxgoy0iN6oeKsbOgAklcmddU2_w/viewform?usp=header')">
+            <div class="icon"><i class="fas fa-car"></i></div>
+            <h3>Car Repair</h3>
+            <p>Get expert car repair services at your location.</p>
+        </div>
+        <div class="service-box" onclick="redirectToForm('https://docs.google.com/forms/d/e/1FAIpQLSc2yRJEuoQrUG2dhDU_jDpSxgoy0iN6oeKsbOgAklcmddU2_w/viewform?usp=header')">
+            <div class="icon"><i class="fas fa-bicycle"></i></div>
+            <h3>Bike Repair</h3>
+            <p>Quick and reliable bike repair services.</p>
+        </div>
+        <div class="service-box" onclick="redirectToForm('https://docs.google.com/forms/d/e/1FAIpQLSc2yRJEuoQrUG2dhDU_jDpSxgoy0iN6oeKsbOgAklcmddU2_w/viewform?usp=header')">
+            <div class="icon"><i class="fas fa-battery-full"></i></div>
+            <h3>Battery Replacement</h3>
+            <p>Fast battery replacement and jump-start assistance.</p>
+        </div>
+        <div class="service-box" onclick="redirectToForm('https://docs.google.com/forms/d/e/1FAIpQLSc2yRJEuoQrUG2dhDU_jDpSxgoy0iN6oeKsbOgAklcmddU2_w/viewform?usp=header')">
+            <div class="icon"><i class="fas fa-oil-can"></i></div>
+            <h3>Oil Change</h3>
+            <p>Schedule an oil change for smooth engine performance.</p>
+        </div>
+        <!-- Complaint Box as a Service Card -->
+        <div class="service-box" onclick="redirectToForm('https://docs.google.com/forms/d/e/1FAIpQLSc2yRJEuoQrUG2dhDU_jDpSxgoy0iN6oeKsbOgAklcmddU2_w/viewform?usp=header')">
+            <div class="icon"><i class="fas fa-comment-dots"></i></div>
+            <h3>Complaint Box</h3>
+            <p>Click here to submit your complaint or feedback.</p>
+        </div>
+    </div>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are E-Mechanics, your trusted partner for auto repair services. With years of experience, we provide reliable and affordable solutions for all your vehicle needs.</p>
+    </section>
+
+    <!-- Public Feedback Section -->
+    <section id="testimonials">
+        <h2>Public Feedback</h2>
+        <div class="testimonial">
+            <p>"Great service! My car was fixed in no time."</p>
+            <p>- Asnan Khan</p>
+        </div>
+        <div class="testimonial">
+            <p>"Highly recommend E-Mechanics for all your auto needs."</p>
+            <p>- Mobeen Azmat</p>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:mughal@emechanics.com">mughal@emechanics.com</a></p>
+        <p>Phone: <a href="tel:+923478033080">+923478033080</a></p>
+        <p>Address: Mughal Auto Repair Mardan, near college chowke</p>
+    </section>
+
+    <!-- Privacy Policy Section -->
+    <div id="privacy-policy">
+        <h3>Privacy Policy</h3>
+        <p>This is the Privacy Policy section. Here is where we outline our policies regarding the collection, usage, and protection of your personal information.</p>
+        <p>1. We collect information to provide better services to our users.</p>
+        <p>2. We take privacy seriously and ensure that personal data is protected.</p>
+        <p>3. Your information will not be shared with third parties unless necessary for service provision.</p>
+        <p>4. You may request to access, update, or delete your personal data at any time.</p>
+        <p>5. For detailed terms, please contact us directly.</p>
+    </div>
+
+    <footer>
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="javascript:void(0);" onclick="togglePrivacyPolicy()" style="color: white;">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <script>
+        // Function to redirect to Google Form
+        function redirectToForm(formUrl) {
+            window.location.href = formUrl;
+        }
+
+        // Function to toggle Privacy Policy visibility
+        function togglePrivacyPolicy() {
+            var policy = document.getElementById('privacy-policy');
+            policy.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
